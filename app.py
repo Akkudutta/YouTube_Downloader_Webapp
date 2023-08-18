@@ -15,6 +15,14 @@ def get_binary_file_downloader_html(bin_file, file_label='File', button_label='D
 
 st.set_page_config(page_title="YouTube Video/Audio Downloader", page_icon='📼', layout= 'wide')
 
+#----USE LOCAL CSS-------
+#Style.css file download: https://github.com/Sven-Bo/personal-website-streamlit/blob/master/style/style.css
+def local_css(file_name):
+    with open(file_name) as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
+local_css("Style/Style.css")
+
 l1, l2 = st.columns((0.4,2))
 with l2:
     # Set Streamlit app title
